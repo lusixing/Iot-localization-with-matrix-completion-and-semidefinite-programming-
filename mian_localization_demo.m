@@ -24,7 +24,7 @@ ratio_noise = 0.1;
 alpha = 0.1;  %lost ratio
 
 d = 2; %problem dimensions 
-N_a = size(u,2); %number of anchor
+N_a = size(u,2); %number of anchors
 N_s = 20;  %number of sensor nodes
 
 x1 = 2*x_max*rand(1,N_s)-x_max;
@@ -174,8 +174,8 @@ scatter(X_hat2(1,:),X_hat2(2,:),'gv')
 hold on
 xlabel("X axis(meters)")
 ylabel("Y axis(meters)")
-legend("anchor nodes","x locations ground truth","x locations obtain by SDP","x locations obtain by triangulation")
-ttl = strcat("IoT localization with lost ratio =",num2str(alpha),"noise ratio=",num2str(ratio_noise));
+legend("anchor nodes","x locations ground truth","x locations obtain by MC+SDP","x locations obtain by MC+triangulation")
+ttl = strcat("IoT localization with lost ratio =",num2str(alpha)," noise ratio=",num2str(ratio_noise));
 title(ttl)
 
 nmse_X_tri = norm(x-X_hat2,'fro')/norm(x,'fro');
